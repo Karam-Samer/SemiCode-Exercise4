@@ -3,6 +3,10 @@
         width: 280px;
         height: 280px;
     }
+
+    .popup .box .indicators{
+        width: 80%;
+    }
 }
 
 @media (min-width: 371px) and (max-width: 1300px) {}

@@ -120,6 +120,11 @@
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    overflow-x: auto;
+}
+
+.popup .box .indicators ul{
+    width: fit-content;
 }
 
 .popup .box .indicators ul li.active {
