@@ -1,0 +1,128 @@
+#Gallery {
+    position: relative;
+    z-index: 2;
+}
+
+#Gallery .row .box .item {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    position: relative;
+}
+
+#Gallery .row .box .item img {
+    transition-duration: .5s;
+}
+
+#Gallery .row .box .item:hover img {
+    transform: scale(1.2);
+}
+
+#Gallery .row .box .item .layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-color);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 25px;
+    opacity: 0;
+    transition-duration: .5s;
+}
+
+#Gallery .row .box .item:hover .layout {
+    opacity: 1;
+}
+
+#Gallery .row .box .item .layout i {
+    transition-duration: .5s;
+    cursor: pointer;
+}
+
+#Gallery .row .box .item .layout i:hover {
+    color: var(--main-color);
+    transform: rotate(180deg);
+}
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(15, 32, 39, .5);
+    background: -webkit-linear-gradient(to right, rgba(44, 83, 100, .5), rgba(32, 58, 67, .5), rgba(15, 32, 39, .5));
+    background: linear-gradient(to right, rgba(44, 83, 100, .5), rgba(32, 58, 67, .5), rgba(15, 32, 39, .5));
+    opacity: 0;
+    z-index: 1;
+    transition-duration: .5s;
+}
+
+.popup.active {
+    opacity: 1;
+    z-index: 3;
+}
+
+.popup .box {
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+
+.popup .box i,
+.popup .box .indicators {
+    position: absolute;
+    font-size: 16px;
+}
+
+.popup .box i,
+.popup .box .indicators ul li {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    background: #0f2027;
+    background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+    background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+    color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.popup .box i:nth-of-type(1) {
+    top: 20px;
+    right: 20px;
+}
+
+.popup .box i:nth-of-type(2),
+.popup .box i:nth-of-type(3) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.popup .box i:nth-of-type(2) {
+    right: 20px;
+}
+
+.popup .box i:nth-of-type(3) {
+    left: 20px;
+}
+
+.popup .box .indicators {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.popup .box .indicators ul li.active {
+    background: #fff;
+    box-shadow: 5px 5px 5px #000;
+}

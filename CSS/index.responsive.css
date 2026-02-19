@@ -1,0 +1,31 @@
+@media (max-width: 1300px) {
+    .popup .box {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+@media (min-width: 371px) and (max-width: 1300px) {}
+
+@media (min-width: 577px) and (max-width: 1300px) {
+    .popup .box {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1300px) {
+    .popup .box {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1300px) {
+    .popup .box {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media (min-width: 1181px) and (max-width:1300px) {}
