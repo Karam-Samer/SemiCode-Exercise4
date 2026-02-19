@@ -76,6 +76,16 @@
     position: relative;
 }
 
+.popup .box.shake {
+    animation: shake .5s;
+}
+
+.popup .box.scaleup {
+    animation: scaleup .5s;
+}
+    
+
+
 .popup .box i,
 .popup .box .indicators {
     position: absolute;

@@ -38,7 +38,7 @@ popupKeys.forEach(PopupKey => {
 
         updateIndicators();
 
-       updatePopupImg(currentImgSrc);
+        updatePopupImg(currentImgSrc);
 
     });
 });
@@ -68,13 +68,57 @@ popupPrev.addEventListener('click', function (e) {
 
 popupExit.addEventListener('click', togglePopup);
 
-popupIndicators.forEach(function (popupIndicator){
+popupIndicators.forEach(function (popupIndicator) {
     popupIndicator.addEventListener('click', function () {
         let clickedIndex = Array.from(popupIndicators).indexOf(popupIndicator);
+        if (clickedIndex == currentImgIndex){
+            popupBox.classList.add('scaleup');
+            setTimeout(function () {
+                popupBox.classList.remove('scaleup');
+            }, 500);
+        }
+        else{
         currentImgIndex = clickedIndex;
-
         currentImgSrc = imgList[clickedIndex].getAttribute('src');
         updatePopupImg(currentImgSrc);
-
         updateIndicators();
-})});
+
+        }
+
+    })
+});
+
+document.addEventListener('keydown', function (e) {
+    if (popupEle.classList.contains('active')) {
+        if (e.key == 'Escape') {
+            popupExit.click();
+        } else if (e.key == 'ArrowRight') {
+            popupNext.click();
+        } else if (e.key == 'ArrowLeft') {
+            popupPrev.click();
+        }
+        else if (!isNaN(e.key)) {
+            let clickedIndex = parseInt(e.key) - 1;
+            if (clickedIndex >= 0 && clickedIndex < popupIndicators.length) {
+                if (clickedIndex == currentImgIndex) {
+                    popupBox.classList.add('scaleup');
+                    setTimeout(function () {
+                        popupBox.classList.remove('scaleup');
+                    }, 500);
+                }
+                else {
+                    currentImgIndex = clickedIndex;
+                    currentImgSrc = imgList[clickedIndex].getAttribute('src');
+                    updatePopupImg(currentImgSrc);
+                    updateIndicators();
+                }
+            }
+        }
+        else {
+            popupBox.classList.add('shake');
+            setTimeout(function () {
+                popupBox.classList.remove('shake');
+            }, 500);
+        }
+    }
+});
